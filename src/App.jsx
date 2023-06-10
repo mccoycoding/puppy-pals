@@ -13,15 +13,15 @@ function App() {
   return (
     <div className="App">
       {puppies.map(puppy => {
-        return <p onClick={() => {setFeatPupId(puppy.id)}} key={puppy.id}>{puppy.name}</p>
+        return <p className="puppy-listing" onClick={() => {setFeatPupId(puppy.id)}} key={puppy.id}>{puppy.name}</p>
       })}
       {featPupId && (
-        <div>
+        <div className='puppy-details'>
           <h2>{featuredPup.name}</h2>
-          <ul>
-            <li>Age: {featuredPup.age}</li>
-            <li>Email: {featuredPup.email}</li>
-          </ul>
+          <div>
+            <p className='details'>Age: {featuredPup.age}</p>
+            <p className='details'>Email: {featuredPup.email}</p>
+          </div>
         </div>
       )}
     </div>
